@@ -23,6 +23,7 @@ case "$cmd" in
   nyx)        cmd_nyx "$@" ;;
   knowledge)  cmd_knowledge "$@" ;;
   registry)   cmd_registry "$@" ;;
+  web)        bash "$ARIA_HOME/web/start.sh" "$@" ;;
   version)    echo "aria v${ARIA_VERSION}" ;;
   help|--help|-h)
     cat <<'HELP'
@@ -41,6 +42,7 @@ aria — Agent-Runtime Integration Architecture CLI
   aria knowledge stats                Stats
   aria registry runtimes              List runtimes
   aria registry nodes                 List nodes
+  aria web [port]                     Start ARIA Dashboard (default: 7700)
   aria version                        Version
 HELP
     ;;
