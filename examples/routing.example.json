@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "rules": [
+    { "keywords": ["server", "infra", "health"], "agent": "infra", "priority": 2 },
+    { "keywords": ["agent", "nyx", "skill"], "agent": "nyx-ops", "priority": 1 }
+  ],
+  "fallback": "nyx-ops",
+  "min_score": 2
+}

@@ -1,0 +1,38 @@
+{
+  "version": "1.0.0",
+  "name": "Agent-Runtime Integration Architecture",
+  "short": "ARIA",
+  "home": "~/.aria",
+  "khala": {
+    "backend": "clawbus",
+    "channels_dir": "~/.aria/khala/channels",
+    "default_ttl": 86400,
+    "default_priority": "normal"
+  },
+  "knowledge": {
+    "backend": "sqlite-fts5",
+    "db": "~/.aria/knowledge/main.sqlite"
+  },
+  "nyx": {
+    "agents_dir": "~/.aria/agents",
+    "prompts_dir": "~/.aria/nyx/prompts",
+    "routing": "~/.aria/nyx/routing.json"
+  },
+  "registry": {
+    "runtimes_dir": "~/.aria/registry/runtimes",
+    "nodes_dir": "~/.aria/registry/nodes"
+  },
+  "inference": {
+    "primary": {
+      "provider": "ollama",
+      "base_url": "http://localhost:11434",
+      "model": ""
+    }
+  },
+  "runtimes": {
+    "openclaw": { "enabled": true },
+    "claude-code": { "enabled": true },
+    "codex": { "enabled": false },
+    "cursor": { "enabled": false }
+  }
+}

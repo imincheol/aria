@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+  "description": "Example team presets using dev archetypes",
+  "presets": [
+    {
+      "id": "dev-full",
+      "name": "Full Dev Team Review",
+      "description": "All development roles review in parallel",
+      "members": ["planner", "designer", "frontend-dev", "backend-dev", "qa-engineer", "dba", "devops"],
+      "review_mode": "parallel",
+      "synthesis": true
+    },
+    {
+      "id": "dev-cross",
+      "name": "Cross-Check Team",
+      "description": "Cross-role verification with debate",
+      "members": ["fullstack-dev", "project-lead", "pm", "security-expert"],
+      "review_mode": "debate",
+      "synthesis": true
+    }
+  ]
+}

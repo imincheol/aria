@@ -1,0 +1,10 @@
+{
+  "type": "harness",
+  "domain": "example",
+  "model_hint": "sonnet",
+  "runtime_affinity": null,
+  "node_binding": null,
+  "skills": ["example-*"],
+  "routing_keywords": ["example", "demo"],
+  "harness_files": ["harness/example.md"]
+}
