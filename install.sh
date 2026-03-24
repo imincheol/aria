@@ -55,7 +55,7 @@ fi
 ln -sfn "$ARIA_HOME/bin/aria" "$ARIA_HOME/bin/arb" 2>/dev/null && echo "  arb → aria (alias)" || true
 
 # ── 5. Install runtime plugins (if requested) ──
-echo "[5/6] Plugins..."
+echo "[5/7] Plugins..."
 for plugin_dir in "$PROJECT_DIR"/plugins/*/; do
   [[ -d "$plugin_dir" ]] || continue
   local_install="$plugin_dir/install.sh"
@@ -67,8 +67,12 @@ for plugin_dir in "$PROJECT_DIR"/plugins/*/; do
   fi
 done
 
-# ── 6. PATH hint ──
-echo "[6/6] PATH setup..."
+# ── 6. Seed shared portable skills ──
+echo "[6/7] Shared portable skills..."
+bash "$PROJECT_DIR/scripts/sync-shared-skills.sh"
+
+# ── 7. PATH hint ──
+echo "[7/7] PATH setup..."
 if echo "$PATH" | grep -q "$ARIA_HOME/bin"; then
   echo "  Already in PATH"
 else

@@ -34,6 +34,8 @@ aria — Agent-Runtime Integration Architecture CLI
   aria khala publish <ch> <msg>       Publish to Khala channel
   aria khala list                     List channels
   aria khala tail <ch> [n]            Recent messages
+  aria khala plaza-log ...            Structured Plaza work log
+  aria khala plaza-check ...          Check recent Plaza records
   aria nyx list                       List Nyx agents
   aria nyx info <id>                  Agent details
   aria nyx archetypes [category]      List review archetypes

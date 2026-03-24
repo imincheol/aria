@@ -8,7 +8,33 @@ ARIA_KNOWLEDGE_DB="$ARIA_HOME/knowledge/main.sqlite"
 ARIA_KNOWLEDGE_CLI="$ARIA_HOME/knowledge/lib/oc-knowledge.sh"
 ARIA_REGISTRY="$ARIA_HOME/registry"
 ARIA_AGENTS="$ARIA_HOME/agents"
-ARIA_RUNTIME="${ARIA_RUNTIME:-claude-code}"
+
+aria_detect_runtime() {
+  if [[ -n "${ARIA_RUNTIME:-}" ]]; then
+    printf '%s\n' "$ARIA_RUNTIME"
+    return
+  fi
+
+  case "${__CFBundleIdentifier:-}" in
+    com.openai.codex)
+      printf '%s\n' "codex"
+      return
+      ;;
+    com.anthropic.claudefordesktop)
+      printf '%s\n' "claude-app"
+      return
+      ;;
+  esac
+
+  if [[ -n "${CODEX_THREAD_ID:-}" || -n "${CODEX_SHELL:-}" || -n "${CODEX_INTERNAL_ORIGINATOR_OVERRIDE:-}" ]]; then
+    printf '%s\n' "codex"
+    return
+  fi
+
+  printf '%s\n' "claude-code"
+}
+
+ARIA_RUNTIME="$(aria_detect_runtime)"
 ARIA_VERSION="1.0.0"
 
 # Legacy compat

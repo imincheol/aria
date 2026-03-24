@@ -564,6 +564,25 @@ See [docs/ECOSYSTEM.md](docs/ECOSYSTEM.md) for the full integration guide, data 
 
 ---
 
+## Shared Skills
+
+ARIA seeds a small portable shared-skill set at install time.
+
+- shared source of truth: `~/.agent/skills`
+- generated manifest: `~/.agent/config/skills-manifest.generated.yaml`
+- consumer/runtime exposure:
+  - `~/.codex/skills`
+  - `~/.claude/skills`
+  - `~/.aria/runtimes/codex/skills`
+  - `~/.aria/runtimes/claude-code/skills`
+
+The default bundled set currently includes the portable `agenthive` docs-based
+skills, and opportunistically re-exports a few already-installed portable
+skills such as `github`, `session-logs`, `summarize`, and
+`llm-calab-bridge` when they exist locally.
+
+---
+
 ## Contributing
 
 Contributions welcome. Please open an issue first to discuss proposed changes.
